@@ -1,0 +1,259 @@
+﻿@model StarSecurityServices.Models.Booking
+
+@{
+    ViewData["Title"] = "serv";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-title-area page-title-style-two">
+<div class="container">
+<div class="page-title-content">
+<h2>Services</h2>
+<ul>
+<li>
+<a href="@Url.Action("Index", "Index")">
+<i class="bx bx-home"></i>
+Home
+</a>
+</li>
+<li class="active">Contact</li>
+</ul>
+</div>
+</div>
+</div>
+
+<section class="our-approach-area pb-70 mt-5">
+    <div class="container" id="about">
+    <div class="section-title">
+    <h2>CASH-IN-TRANSIT</h2>
+    </div>
+    <div class="row align-items-center">
+   
+    <div class="col-lg-12">
+    <div class="approach-content">
+    <div class="row">
+    <div class="col-lg-12 col-sm-12">
+    <div >
+    <h3 class="text-center">Star Security</h3>
+    <p>
+        SSS is regarded as one of the leading Cash Transportation Operators in Pakistan. Our Cash-in-Transit Service (CIT) is known to be secure, efficient, prompt and reliable. Guarded exclusively by highly trained ex-military personnel, our CIT fleet of Armored Vehicles conforms to the international standards. Purpose-built, custom-designed, strengthened and reinforced to guard your valuable assets during transit, our CIT vehicles are equipped with the latest state-of-the-art security systems. Our CIT team is skilled in all aspects relating to collection and handling of large volumes of cash and valuables ensuring secure transportation and prompt delivery. Our vehicles are available at short notice 24/7 including public holidays.
+    </p>
+    <p>
+        SSS assumes total responsibility for consignments through comprehensive risk coverage by a leading insurance company of Pakistan. We also offer complete insurance of your valuables during transit and overnight vault services.
+    </p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <div class="approach-img">
+        <img src="~/assets/img/map.jpeg" alt="Image">
+        </div>
+
+    <section class="our-approach-area pb-70 mt-5">
+        <div class="container" id="about">
+        <div class="section-title">
+        <h2>ATM Security</h2>
+        </div>
+        <div class="row align-items-center">
+        <div class="col-lg-6">
+        <div class="approach-img">
+        <img src="~/assets/img/atm.jpeg" alt="Image">
+        </div>
+        </div>
+        <div class="col-lg-6">
+        <div class="approach-content">
+        <div class="row">
+        <div class="col-lg-12 col-sm-12">
+        <div class="single-approach">
+        <h3>Star Security</h3>
+        <p>SSS has diversified its core business into the field of ATM Services. Our expert team has put in place a strong set of procedures that are executed with the highest standards of care and professionalism. Our teams are specialized in: -
+        </p>
+        <ol>
+            <li>Counting and collection of cash/cassettes from any Bank / branch or a cash cell and its safe transportation in our CIT vehicles to an off-site ATM machine.</li>
+               <li>Counting balance cash held in an ATM and its safe transportation to the bank in a CIT vehicle after cash balancing as per the ATM counter and General Ledger Balance.</li> 
+               <li>Replenishment of fit currency notes in a given ATM.</li> 
+               <li>Balancing of cash with a reconciliation statement with the concerned bank.</li> 
+               <li> Secure retrieval of rejected cash/captured ATM cards and their safe transportation/delivery to the custodian Bank</li> 
+        </ol>
+        <a href="#con" class="default-btn mt-3" >
+            <span>Book Now</span>
+            </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+        <section class="our-approach-area pb-70 mt-5">
+            <div class="container" id="about">
+            <div class="section-title">
+            <h2>Vaulting Services</h2>
+            </div>
+            <div class="row align-items-center">
+            <div class="col-lg-6">
+            <div class="approach-img">
+            <img src="~/assets/img/abc.jpg" alt="Image">
+            </div>
+            </div>
+            <div class="col-lg-6">
+            <div class="approach-content">
+            <div class="row">
+            <div class="col-lg-12 col-sm-12">
+            <div class="single-approach">
+            <h3>Star Security</h3>
+           <p>
+            SSS exclusive Cash Vault Service allows Banks, Companies and Organizations to make secure deposits. Our vaults are built in accordance with international specifications, equipped with unique, cutting edge impenetrable security systems and are guarded round-the-clock in all the major cities of Pakistan.
+           </p>
+            <a href="#con" class="default-btn mt-3" >
+                <span>Book Now</span>
+                </a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </section>
+
+<section class="main-contact-area ptb-100" id="con">
+     <div class="container">
+<div class="row align-items-center">
+    <div class="col-lg-8">
+<div class="contact-wrap">
+<div class="contact-form">
+<div class="contact-title">
+<h2>Write Us</h2>
+</div>
+ 
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           <div class="col-lg-6">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" id="name"  />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-lg-6">
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="form-group">
+                <label asp-for="No_of_Guards" class="control-label"></label>
+                <input asp-for="No_of_Guards" class="form-control" />
+                <span asp-validation-for="No_of_Guards" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="form-group">
+                <label asp-for="Area" class="control-label"></label>
+                <input asp-for="Area" class="form-control" />
+                <span asp-validation-for="Area" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="form-group">
+                <label asp-for="Contact" class="control-label"></label>
+                <input asp-for="Contact" class="form-control" />
+                <span asp-validation-for="Contact" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="form-group">
+                <label asp-for="Weapon" class="control-label"></label>
+                <input asp-for="Weapon" class="form-control" />
+                <span asp-validation-for="Weapon" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-6">
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="col-12">
+            <div class="form-group">
+                <label asp-for="Add_info" class="control-label"></label>
+                <input asp-for="Add_info"  class="form-control" />
+                <span asp-validation-for="Add_info" class="text-danger"></span>
+            </div>
+            </div>
+<div class="col-12">
+            <button class="default-btn" type="submit">
+        <span>Submit</span>
+        </button>
+ </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-4">
+<div class="contact-info">
+<h3>Our contact details</h3>
+<p>Visit Our Branch.</p>
+<ul class="address">
+<li class="location">
+<i class="bx bxs-location-plus"></i>
+<span>Address</span>
+Data Center Building Bhimpura, Karachi
+</li>
+<li>
+<i class="bx bxs-phone-call"></i>
+<span>Phone</span>
+<a href="tel:03353073326">+923353073326</a>
+<a href="tel:03353073326">+923353073326</a>
+</li>
+<li>
+</li>
+</ul>
+<div class="sidebar-follow-us">
+<h3>Follow us:</h3>
+<ul class="social-wrap">
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-twitter"></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-instagram"></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-facebook"></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-youtube"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+

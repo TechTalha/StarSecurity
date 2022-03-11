@@ -1,0 +1,53 @@
+﻿@model IEnumerable<StarSecurityServices.Models.Vacancies>
+@{
+    ViewData["Title"] = "Career";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-title-area page-title-style-two">
+<div class="container">
+<div class="page-title-content">
+<h2>Career With Us</h2>
+<ul>
+<li>
+<a  href="@Url.Action("Index", "Index")">
+<i class="bx bx-home"></i>
+Home
+</a>
+</li>
+<li class="active">Career</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container">
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Job Title</th>
+      <th scope="col">Department</th>
+      <th scope="col">opening Date</th>
+      <th scope="col">Duty Station</th>
+    </tr>
+  </thead>
+  <tbody>
+@foreach(var item in Model){
+    <tr>
+        
+      <td><a href="#">@Html.DisplayFor(modelitem => item.Job_Title)</a></td>
+      <td><a href="#">@Html.DisplayFor(modelitem => item.Department)</a></td>
+      <td><a href="#">@Html.DisplayFor(modelitem => item.opening_Date)</a></td>
+      <td><a href="#">@Html.DisplayFor(modelitem => item.Duty_Station)</a></td>
+      @*<td>@Html.DisplayFor(modelitem => item.Depart)</td>
+      <td>@Html.DisplayFor(modelitem => item.Role)</td>
+      <td>@Html.DisplayFor(modelitem => item.Grade)</td>*@
+    </tr>
+}
+  </tbody>
+</table>
+</div>
+
+
+
+

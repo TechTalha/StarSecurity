@@ -1,0 +1,322 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> signinmanager;
+
+<!doctype html>
+<html lang="zxx">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/assets/css/animate.min.css">
+<link rel="stylesheet" href="~/assets/css/boxicons.min.css">
+<link rel="stylesheet" href="~/assets/css/magnific-popup.min.css">
+<link rel="stylesheet" href="~/assets/css/flaticon.css">
+<link rel="stylesheet" href="~/assets/css/meanmenu.min.css">
+<link rel="stylesheet" href="~/assets/css/nice-select.min.css">
+<link rel="stylesheet" href="~/assets/css/odometer.min.css">
+<link rel="stylesheet" href="~/assets/css/style.css">
+<link rel="stylesheet" href="~/assets/css/responsive.css">
+
+<link rel="icon" type="image/png" href="~/assets/img/favicon2.png">
+
+<title>Star Security Services</title>
+</head>
+<body>
+
+<div class="preloader">
+<div class="loader">
+<div class="loader-outter"></div>
+<div class="loader-inner"></div>
+<div class="indicator">
+<svg width="16px" height="12px">
+<polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+<polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+</svg>
+</div>
+</div>
+</div>
+
+
+<header class="header-area">
+
+    <div class="top-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6 col-sm-6">
+<ul class="header-left-content">
+<li>
+<i class="bx bx-phone-call"></i>
+<a href="tel:03353073326">+923353073326</a>
+</li>
+</ul>
+</div>
+<div class="col-lg-6 col-sm-6">
+<ul class="header-right-content">
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-facebook"></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-instagram"></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-linkedin"></i>
+</a>
+</li>
+<li>
+<a href="#" target="_blank">
+<i class="bx bxl-twitter"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="navbar-area">
+<div class="mobile-nav">
+<div class="container">
+<a href="index.html" class="logo" href="@Url.Action("Index", "Index")">
+<img src="~/assets/img/logo.png"  alt="Logo">
+</a>
+</div>
+</div>
+<div class="main-nav">
+<div class="container">
+<nav class="navbar navbar-expand-md">
+<a class="navbar-brand" href="@Url.Action("Index", "Index")" >
+<img src="~/assets/img/logo.png" alt="Logo" >
+</a>
+<div class="collapse navbar-collapse mean-menu">
+<ul class="navbar-nav m-auto">
+<li class="nav-item">
+<a asp-action="About" asp-controller="Index" class="nav-link active">
+About
+</a>
+</li>
+
+<li class="nav-item">
+    <a href="#" class="nav-link">
+    Services
+    <i class="bx bx-chevron-down"></i>
+    </a>
+    <ul class="dropdown-menu">
+    <li class="nav-item">
+    <a asp-action="Create" asp-controller="Mybooking" class="nav-link">Manned Guarding</a>
+    </li>
+    <li class="nav-item">
+    <a asp-action="serv" asp-controller="Mybooking" class="nav-link">Cash in Transit</a>
+    </li>
+    <li class="nav-item">
+    <a asp-action="book" asp-controller="Mybooking" class="nav-link">Electronic Services</a>
+    </li>
+    </ul>
+    </li>
+<li class="nav-item">
+<a asp-action="Career" asp-controller="Index" class="nav-link">
+Career
+</a>
+</li>
+<li class="nav-item">
+<a asp-action="Clients" asp-controller="Index" class="nav-link">
+Clients
+</a>
+</li>
+<li class="nav-item">
+    <a asp-action="Contacts" asp-controller="Index" class="nav-link">
+        Contact
+    </a>
+</li>
+@if (signinmanager.IsSignedIn(User)){
+
+                <li class="nav-item">
+                    <a href="@Url.Action("Index","Index")">
+                        @User.Identity.Name <i class="bi bi-person"></i>
+
+                    </a>
+                    &nbsp;
+                    <a href="@Url.Action("Logout","Index")">
+                        Logout <i class="bi bi-person"></i>
+
+                    </a>
+                </li>
+}
+else{
+<li class="nav-item">
+<a asp-action="Login" asp-controller="Index" class="nav-link">
+Login
+</a>
+</li>
+
+}
+</ul>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</header>
+ 
+
+            @RenderBody();
+
+    <footer class="footer-area pt-100 pb-70 jarallax" data-jarallax='{"speed": 0.3}'>
+<div class="container">
+<div class="row">
+<div class="col-lg-3 col-md-6">
+<div class="single-footer-widget">
+<a href="index.html" class="logo">
+<img src="~/assets/img/logo.png" alt="Image">
+</a>
+<p>Star Security Services (SSS) is providing you best Manned Guarding Security, Technical Security and much more , be Secure</p>
+<ul class="social-icon">
+<li>
+<a href="#">
+<i class="bx bxl-facebook"></i>
+</a>
+</li>
+<li>
+<a href="#">
+<i class="bx bxl-instagram"></i>
+</a>
+</li>
+<li>
+<a href="#">
+<i class="bx bxl-linkedin-square"></i>
+</a>
+</li>
+<li>
+<a href="#">
+<i class="bx bxl-twitter"></i>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="single-footer-widget">
+<h3>Address</h3>
+<ul class="address">
+<li class="location">
+<i class="bx bxs-location-plus"></i>
+Data Center Bhimpura,Karachi
+</li>
+<li>
+<i class="bx bxs-envelope"></i>
+<a href=""><span class="__cf_email__" data-cfemail="c4aca1a8a8ab84b7a1b5b0bdeaa7aba9">StarSecurityServices@gmail.com</span></a>
+</li>
+<li>
+<i class="bx bxs-phone-call"></i>
+<a href="+92 335307336">+92 335307336</a>
+<a href="+92 335307336">+92 335307336</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="single-footer-widget">
+<h3 href="@Url.Action("Index", "Index")">Home</h3>
+<ul class="import-link">
+<li>
+<a asp-action="About" asp-controller="Index">About</a>
+</li>
+<li>
+<a asp-action="Career" asp-controller="Index">Career</a>
+</li>
+<li>
+<a asp-action="Clients" asp-controller="Index">Clients</a>
+</li>
+<li>
+<a asp-action="Contacts" asp-controller="Index">Contact</a>
+</li>
+<li>
+<a asp-action="Login" asp-controller="Index">Login</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-md-6">
+<div class="single-footer-widget">
+<h3>Services</h3>
+<ul class="import-link">
+<li>
+<a asp-action="Create" asp-controller="Mybooking">Manned Guarding</a>
+</li>
+<li>
+<a asp-action="serv" asp-controller="Mybooking">Cash-In -Transit</a>
+</li>
+<li>
+<a asp-action="book" asp-controller="Mybooking">Electronic Services</a>
+</li>
+<li>
+<a asp-action="Site" asp-controller="Index">Sitemap</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+
+<div class="copy-right-area">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6 col-md-6">
+<p>
+Copyright <i class="bx bx-copyright"></i>2021 Star Security Services. Designed By
+<a href="" target="_blank">WellTech</a>
+</p>
+</div>
+<div class="col-lg-6 col-md-6">
+<ul class="footer-menu">
+<li>
+<a href="privacy-policy.html" target="_blank">
+Privacy Policy
+</a>
+</li>
+<li>
+<a href="terms-conditions.html" target="_blank">
+Terms & Conditions
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="go-top">
+<i class="bx bx-chevrons-up"></i>
+<i class="bx bx-chevrons-up"></i>
+</div>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="~/assets/js/jquery.min.js"></script>
+<script src="~/assets/js/bootstrap.bundle.min.js"></script>
+<script src="~/assets/js/meanmenu.min.js"></script>
+<script src="~/assets/js/owl.carousel.min.js"></script>
+<script src="~/assets/js/nice-select.min.js"></script>
+<script src="~/assets/js/magnific-popup.min.js"></script>
+<script src="~/assets/js/jarallax.min.js"></script>
+<script src="~/assets/js/appear.min.js"></script>
+<script src="~/assets/js/odometer.min.js"></script>
+<script src="~/assets/js/smoothscroll.min.js"></script>
+<script src="~/assets/js/form-validator.min.js"></script>
+<script src="~/assets/js/contact-form-script.js"></script>
+<script src="~/assets/js/ajaxchimp.min.js"></script>
+<script src="~/assets/js/wow.min.js"></script>
+<script src="~/assets/js/custom.js"></script>
+</body>
+</html>
